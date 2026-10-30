@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json.schemastore.org/mcp-config",
+  "description": "Comprehensive Antigravity MCP Server Configuration Catalog for Full-Stack, Database, Memory, and AI Development",
+  "mcpServers": {
+    "memory": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "@modelcontextprotocol/server-memory"],
+      "description": "Persistent Knowledge Graph Memory across sessions. Retains architecture decisions, tech stacks, and user preferences permanently."
+    },
+    "fetch": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "@modelcontextprotocol/server-fetch"],
+      "description": "Fetches and transforms web documentation, APIs, and articles into clean markdown for real-time grounding."
+    },
+    "filesystem": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "@modelcontextprotocol/server-filesystem", "%USERPROFILE%"],
+      "description": "Full filesystem tool integration with user home directory access (expands %USERPROFILE% on Windows)."
+    },
+    "sqlite": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "@modelcontextprotocol/server-sqlite"],
+      "description": "Direct exploration and query execution for SQLite databases."
+    },
+    "puppeteer": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "@modelcontextprotocol/server-puppeteer"],
+      "description": "Headless Chromium browser automation for visual verification, UI testing, and screenshots."
+    },
+    "postgres": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-postgres",
+        "%DATABASE_URL%"
+      ],
+      "description": "Live PostgreSQL schema inspection and query execution. Reads connection string from %DATABASE_URL% or replace with your connection URL."
+    },
+    "github": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "%GITHUB_PERSONAL_ACCESS_TOKEN%"
+      },
+      "description": "Full GitHub integration for managing issues, pull requests, file trees, commits, and releases."
+    }
+  }
+}

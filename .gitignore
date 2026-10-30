@@ -1,0 +1,15 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment and Secrets
+.env
+.env.local
+*.log
+
+# Node & Build artifacts (if added later)
+node_modules/
+dist/
+build/
+.cache/
