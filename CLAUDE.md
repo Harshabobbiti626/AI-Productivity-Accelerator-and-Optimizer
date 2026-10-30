@@ -9,6 +9,7 @@ Automatically detect the user's intent from their prompt and execute the corresp
 
 | User Input Type | Automatic Workflow Triggered | Primary Action |
 | :--- | :--- | :--- |
+| **Quick Snippet / "quick" / "bypass DoD"** | **Zero-Boilerplate Fast Path** | Deliver concise, minimal, direct code immediately. Bypass architecture reviews, DoD checklists, and multi-tier scaffolding. |
 | **PRD / Design Doc / Rough Idea** | **Requirements Scoping** | Auto-catchup domain $\rightarrow$ Ingest to `.agents/knowledge/` $\rightarrow$ Build In-Scope vs. Non-Goals matrix $\rightarrow$ Generate INVEST stories $\rightarrow$ **STOP & Request Developer Approval on Plan** $\rightarrow$ Execute once approved. |
 | **Specific User Story** | **Production Story Solver** | Execute 5-phase full-stack build enforcing the **10-Point Production Definition of Done (DoD)**. |
 | **System Architecture / Scale** | **Principal Architecture** | Back-of-envelope math, C4 models, DB schema with indexes (UUIDv7), RFC 7807 APIs, and ADR. |

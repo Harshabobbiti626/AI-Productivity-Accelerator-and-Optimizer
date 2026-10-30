@@ -1,0 +1,10 @@
+# Windsurf (Codeium) Semantic Search & Codebase Indexing Ignore
+# Excludes bulky prompt playbooks and documentation from vector embeddings
+# so Cascade queries only retrieve your actual source code.
+# The AI can still read these files on-demand via direct paths.
+
+prompts/
+templates/
+.agents/references/
+.agents/knowledge/architecture-decisions/.gitkeep
+.agents/knowledge/design-docs/.gitkeep
