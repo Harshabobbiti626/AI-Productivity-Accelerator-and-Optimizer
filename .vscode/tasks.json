@@ -1,0 +1,31 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "🛡️ Verify Production DoD (Anti-Placeholder Check)",
+      "type": "shell",
+      "command": "powershell -ExecutionPolicy Bypass -File ./scripts/verify-dod.ps1",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "🔍 Sync State Ledger (.agents/STATE.md)",
+      "type": "shell",
+      "command": "powershell -Command \"Get-Item .agents/STATE.md | Select-Object Name, LastWriteTime\"",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always"
+      }
+    }
+  ]
+}

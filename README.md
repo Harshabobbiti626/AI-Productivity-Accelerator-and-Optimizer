@@ -36,21 +36,19 @@ graph TD
 
 ---
 
-## ⚡ DYNAMIC INTENT: JUST SPEAK NATURALLY
+## ⚡ 3-GEAR DYNAMIC TRANSMISSION: JUST SPEAK NATURALLY
 
-You **do not need to memorize prompt numbers or type out complex flags**. The system's **Dynamic Intent Classifier** automatically catches your intent, detects your tech stack, loads the matching domain playbook, and enforces the standards:
+You **do not need to memorize prompt numbers or type out complex flags**. The system's **3-Gear Transmission** automatically detects task scope, selects the right speed gear, loads the matching playbook, and enforces the standards:
 
-| If You Say in Chat... | What the AI Automatically Executes | Reference Skill / Prompt |
-| :--- | :--- | :--- |
-| *"Here's my design doc for real-time notifications: [text]. Break it down."* | **Requirements Scoping**: Separates In-Scope (P0) from Non-Goals; generates INVEST BDD User Stories. | [`prd-to-stories`](file:///c:/Users/bobharsh/Downloads/IDE%20config/.agents/skills/prd-to-stories/SKILL.md) / `02_prd_scoping...` |
-| *"Implement US-02 in Next.js and Postgres."* | **Production Story Solver**: Enforces the 10-Point Production DoD (Zod validation, ACID transaction, 4-state UI, a11y, tests). | [`solve-user-story`](file:///c:/Users/bobharsh/Downloads/IDE%20config/.agents/skills/solve-user-story/SKILL.md) / `15_solve_user_story...` |
-| *"Design a high-scale payment processing architecture."* | **Principal Architecture**: C4 container diagrams, capacity calculations, DB schema (UUIDv7), RFC 7807 APIs, ADR. | [`system-architect`](file:///c:/Users/bobharsh/Downloads/IDE%20config/.agents/skills/system-architect/SKILL.md) / `01_architecture...` |
-| *"Review this PR for security, race conditions, and performance."* | **Production Code Review**: 7-pillar audit (OWASP Top 10, concurrency, N+1 queries, memory leaks, strict types). | [`production-code-reviewer`](file:///c:/Users/bobharsh/Downloads/IDE%20config/.agents/skills/production-code-reviewer/SKILL.md) / `09_debugging...` |
-| *"Why is this query slow / why did the server crash?"* | **Root Cause Analysis (RCA)**: 5-Whys diagnosis, minimal hotfix, regression test, permanent remediation. | [`production-code-reviewer`](file:///c:/Users/bobharsh/Downloads/IDE%20config/.agents/skills/production-code-reviewer/SKILL.md) / `09_debugging...` |
-| *"Search the repo for how tokens are generated and implement refresh."* | **Deep Search & Execute**: Targeted reconnaissance $\rightarrow$ trade-off matrix $\rightarrow$ immediate production code. | [`deep-search-and-execute`](file:///c:/Users/bobharsh/Downloads/IDE%20config/.agents/skills/deep-search-and-execute/SKILL.md) / `11_search_investigate...` |
-| *"Decompose this system into microservices with Kafka."* | **Enterprise Microservices**: Bounded Contexts, gRPC/Protobuf, Transactional Outbox + Debezium, Orchestrated Sagas. | `microservices-architecture.md` / `12_microservices...` |
-| *"Build an autonomous multi-agent swarm to test and audit code."* | **Multi-Agent Systems**: Supervisor/Worker DAG, A2A message envelopes, reflexion self-correction loops. | [`multiagent-orchestrator`](file:///c:/Users/bobharsh/Downloads/IDE%20config/.agents/skills/multiagent-orchestrator/SKILL.md) / `13_multiagent...` |
-| *"Write a Rust/Go service with Testcontainers and k6 load tests."* | **Polyglot & Testing Pyramid**: Idiomatic language patterns, real container integration tests, k6 load scripts. | [`quality-engineering-and-testing`](file:///c:/Users/bobharsh/Downloads/IDE%20config/.agents/skills/quality-engineering-and-testing/SKILL.md) / `14_polyglot...` |
+| Gear | Trigger / Example | What the AI Automatically Executes | Reference Engine |
+| :--- | :--- | :--- | :--- |
+| **Gear 1: Fast Path** | `qs: write a regex for email` | **Sub-2s Minimal Output**: Concise, direct code. Zero DoD checklists or scaffolding. | Zero-Boilerplate Fast Path |
+| **Gear 2: Tactical** | `mod: add phone input to profile` | **Surgical Single-Tier**: Modifies target component only. Strict types + test. Zero unrequested DB/backend scaffolding. | Tactical Surgical Mode |
+| **Gear 3: Strategic** | *"Here's my design doc: [spec]"* | **Requirements Scoping**: In-Scope vs. Non-Goals; generates INVEST BDD User Stories. | [`prd-to-stories`](file:///c:/Users/bobharsh/Downloads/IDE%20config/.agents/skills/prd-to-stories/SKILL.md) / `02_prd_scoping...` |
+| **Gear 3: Strategic** | *"Implement US-02 in Next.js & PG"* | **Production Story Solver**: Enforces the 10-Point Production DoD (Zod, ACID DB, 4-state UI, a11y, tests). | [`solve-user-story`](file:///c:/Users/bobharsh/Downloads/IDE%20config/.agents/skills/solve-user-story/SKILL.md) / `15_solve_user_story...` |
+| **Maintenance** | `/compact` | **Context Compaction**: Syncs architectural decisions & stories to `.agents/STATE.md`; purges memory clutter. | State Ledger Sync |
+| **Audit & Review** | *"Review this PR for security"* | **7-Pillar Audit**: OWASP Top 10, concurrency, N+1 queries, memory leaks, strict types. | [`production-code-reviewer`](file:///c:/Users/bobharsh/Downloads/IDE%20config/.agents/skills/production-code-reviewer/SKILL.md) / `09_debugging...` |
+| **Diagnosis** | *"Why is this query slow / crashing?"*| **Root Cause Analysis (RCA)**: 5-Whys diagnosis, minimal hotfix, regression test. | [`production-code-reviewer`](file:///c:/Users/bobharsh/Downloads/IDE%20config/.agents/skills/production-code-reviewer/SKILL.md) / `09_debugging...` |
 
 ---
 

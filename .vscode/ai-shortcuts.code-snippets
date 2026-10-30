@@ -1,24 +1,38 @@
 {
-  "Quick Snippet (Bypass Architecture & DoD)": {
+  "Gear 1: Quick Snippet (Zero-Boilerplate Fast Path)": {
     "prefix": ["quick", "qs", "bypass", "snippet", "Quick Snippet"],
     "body": [
-      "quick: bypass DoD and architectural overhead. $0"
+      "qs: $0"
     ],
-    "description": "⚡ Skip enterprise DoD and architecture scaffolding for instant, minimal 1.5s code generation."
+    "description": "⚡ Gear 1: Sub-2s minimal code without architecture, DoD checklists, or scaffolding."
   },
-  "Implement User Story (10-Point DoD)": {
-    "prefix": ["story", "us", "dod"],
+  "Gear 2: Tactical Surgical Change (Bugfix / Refactor / Single Tier)": {
+    "prefix": ["mod", "fix", "tactical", "ui", "patch"],
+    "body": [
+      "mod: ${1:Describe targeted change}. Scope: ${2|frontend-only,backend-only,bugfix,refactor|}. Keep edits strictly surgical, verify types, and add a regression test. Do not scaffold unrequested tiers. $0"
+    ],
+    "description": "🎯 Gear 2: Surgical modification to a single component or bugfix. Strict types + test, zero bloat."
+  },
+  "Gear 3: Implement User Story (10-Point DoD)": {
+    "prefix": ["story", "us", "dod", "feat"],
     "body": [
       "Implement US-${1:01}: ${2:Action Title} adhering strictly to the 10-Point Production DoD. Target Stack: ${3:Next.js 15, TypeScript, PostgreSQL}. $0"
     ],
-    "description": "🛡️ Execute end-to-end user story solver with the 10-Point Production Definition of Done."
+    "description": "🛡️ Gear 3: End-to-end full-stack feature solver with ACID DB, 4-state UI, and 10-Point DoD."
   },
-  "PRD Scoping & INVEST Stories": {
+  "Gear 3: PRD Scoping & INVEST Stories": {
     "prefix": ["prd", "scope", "invest"],
     "body": [
       "Deconstruct the following feature specification into Strictly In-Scope (P0) vs. Out-of-Scope (Non-Goals) and generate INVEST user stories with 5-scenario BDD:\n\n${0}"
     ],
-    "description": "📋 Deconstruct PRD into scope boundaries and 5-scenario BDD user stories."
+    "description": "📋 Gear 3: Deconstruct PRD into scope boundaries and 5-scenario BDD user stories."
+  },
+  "Context Compaction & State Sync": {
+    "prefix": ["compact", "sync", "checkpoint"],
+    "body": [
+      "/compact: Summarize all completed work, sync decisions and pending tasks into .agents/STATE.md, and reset working context memory."
+    ],
+    "description": "🧠 Purge old context clutter and persist state into .agents/STATE.md."
   },
   "Production Code Review (7 Pillars)": {
     "prefix": ["review", "audit"],

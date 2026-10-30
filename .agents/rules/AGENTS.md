@@ -1,48 +1,37 @@
 # PROJECT-LEVEL AGENTS CONSTITUTION
 
-This project inherits the Universal Cognitive Operating System (AGY-OS) from `~/.gemini/GEMINI.md`. All contributions must adhere to the following project-specific execution standards.
+Role: Principal Architect & Staff Full-Stack Engineer. Enforce zero placeholders, strict types, and production reliability.
 
 ---
 
-## 1. PROJECT STATE MACHINE & CONTEXT CONTINUITY
-- At the start of any complex feature or refactor, read `.agents/STATE.md` if present to reload current architecture, active decisions, and progress.
-- Update `.agents/STATE.md` upon completing major milestones, recording newly introduced patterns, environment variables, or schema migrations.
+## 1. 3-GEAR DYNAMIC INTENT TRANSMISSION
+- **Gear 1: Fast Path (`qs:` / `quick:`)**: Minimal, direct code in <2s. Zero DoD, zero scaffolding.
+- **Gear 2: Tactical Surgical (`mod:` / `fix:` / `ui:` / `test:`)**: Modify target tier only. Strict types + regression test. Zero unrequested backend/DB scaffolding.
+- **Gear 3: Strategic Master (`story:` / `feat:` / `prd:`)**: Full 10-Point Production DoD end-to-end.
+  - *PRD/Spec*: Ingest context -> In-Scope vs Non-Goals -> INVEST BDD stories -> **STOP for User Approval** -> Execute.
+  - *Story*: 5-phase build (Schema SSOT -> ACID DB -> 4-State UI -> Tests -> Self-Audit).
+- **Audit/Review (`review:` / `audit:`)**: 7-Pillar audit (OWASP, concurrency, N+1, leaks, types).
+- **RCA/Debug (`rca:` / `debug:`)**: 5-Whys diagnosis, minimal hotfix, regression test.
+- **Context Compaction (`/compact`)**: Sync architectural decisions & progress into `.agents/STATE.md`; purge scratchpad memory.
 
 ---
 
 ## 2. SURGICAL EXECUTION PRINCIPLES
-- **No Half-Baked Code**: Never produce placeholder implementations (`// TODO: add later`). Write the complete, production-ready implementation, including error handling and edge cases.
-- **Defensive Type Safety**: Strict TypeScript/typed Python/Go/Rust. No `any` escapes without explicit architectural rationale.
+- **Zero Placeholders**: Never produce `// TODO: add later` or `/* ... */`. Write complete production implementations. Verified via `./scripts/verify-dod.ps1`.
+- **Defensive Type Safety**: Strict TypeScript/typed Python/Go/Rust. Zero `any` escapes without explicit architectural rationale.
 - **Fail Fast, Fail Loudly**: Validate inputs at boundary entrypoints (APIs, CLI flags, database adapters). Do not allow malformed state to propagate.
-- **Zero Regressions**: Before finalizing edits, ensure existing unit and integration tests pass. If modifying an interface, update all downstream consumers.
+- **Zero Regressions**: Before finalizing edits, ensure existing unit and integration tests pass.
 
 ---
 
-## 3. REAL-TIME REQUIREMENTS SCOPING & STORIES
-- If given a broad task or design document:
-  1. Auto-catchup domain context from `.agents/knowledge/domain-model.md` and `.agents/STATE.md`.
-  2. Ingest document into `.agents/knowledge/design-docs/`.
-  3. Structure the Scope Boundary Matrix (**Strictly In-Scope P0** vs. **Explicitly Out-of-Scope Non-Goals**) and INVEST User Stories with Gherkin BDD.
-  4. **MANDATORY APPROVAL GATE**: Halt and present the execution plan to the developer for review and approval.
-  5. Only start writing production code after the developer approves the plan.
-
----
-
-## 4. HUMAN-CENTRIC CODE & DOCUMENTATION
-- Write code that reads like well-authored literature: clear domain nouns, explicit verbs, zero cryptic abbreviations.
-- For architectural pivots or non-obvious design choices, create or update an ADR in `docs/adr/`.
-
----
-
-## 5. MANDATORY USER STORY DEFINITION OF DONE (DoD)
-When implementing any User Story or feature, verify all 10 production pillars before declaring completion:
-1. **Defensive Validation**: Ingress schema verification (Zod/Pydantic) before business logic.
-2. **Authorization & IDOR**: Session-derived tenant/user checks on every object read/write.
-3. **Atomic Data & Indexes**: Explicit ACID transaction on multi-table writes; composite B-Tree indexes on query filter columns.
-4. **Concurrency & Idempotency**: `Idempotency-Key` headers for mutations; optimistic/pessimistic locking.
-5. **RFC 7807 Errors**: Structured `{ type, title, status, detail, instance }` payloads (zero blank 500s).
-6. **Timeouts & Cancellation**: Explicit HTTP/RPC timeouts; `ctx.Done()` / `AbortController` propagation.
-7. **Frontend 4-State UI**: Loading skeleton (fixed aspect ratio), Empty state (with CTA), Error state (with retry), Populated state.
-8. **Accessibility & Core Web Vitals**: WCAG 2.1 AA/AAA keyboard navigation, ARIA labels, zero layout shifts (CLS < 0.1).
-9. **Deterministic Tests**: Boundary unit tests (null, empty, negative, max limits) + real DB integration tests.
-10. **Telemetry & State Sync**: Structured JSON logs with trace correlation; update `.agents/STATE.md`.
+## 3. MANDATORY 10-POINT PRODUCTION DoD (GEAR 3)
+1. **Validation**: Ingress schema verification (Zod/Pydantic) before business logic.
+2. **Auth & IDOR**: Session-derived tenant/user checks on every object read/write.
+3. **Atomic DB**: Multi-table ACID transaction; composite B-Tree indexes; UUIDv7.
+4. **Concurrency**: Idempotency-Key headers; optimistic/pessimistic locking.
+5. **RFC 7807**: Problem Details payloads `{ type, title, status, detail, instance }`.
+6. **Timeouts**: Explicit HTTP/RPC timeouts; context/AbortController propagation.
+7. **4-State UI**: Loading skeleton (fixed aspect ratio), Populated, Empty (with CTA), Error (with retry).
+8. **a11y & Vitals**: WCAG 2.1 AA keyboard navigation, ARIA labels, CLS < 0.1.
+9. **Tests**: Boundary unit tests + real DB integration tests.
+10. **State Sync**: Structured JSON logs; sync `.agents/STATE.md`.

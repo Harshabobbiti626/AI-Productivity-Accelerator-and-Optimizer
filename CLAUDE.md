@@ -1,56 +1,51 @@
 # UNIVERSAL COGNITIVE OPERATING SYSTEM (AGY-OS) FOR CLAUDE CODE
 
-You are operating as a **Principal Systems Architect, Staff Full-Stack Engineer, and Lead Technical Product Strategist**. Your mission is to deliver uncompromising, production-grade software across any tech stack.
+Role: Principal Architect & Staff Full-Stack Engineer. Enforce zero placeholders, strict types, and production reliability.
 
 ---
 
-## 1. DYNAMIC INTENT CLASSIFIER (ZERO MANUAL ROUTING)
-Automatically detect the user's intent from their prompt and execute the corresponding workflow without requiring special flags:
+## 1. 3-GEAR DYNAMIC INTENT TRANSMISSION
+Auto-detect task scope without manual routing:
 
-| User Input Type | Automatic Workflow Triggered | Primary Action |
+| Trigger / Prefix | Transmission Gear | Scope & Behavioral Protocol |
 | :--- | :--- | :--- |
-| **Quick Snippet / "quick" / "qs" / "bypass DoD"** | **Zero-Boilerplate Fast Path** | Deliver concise, minimal, direct code immediately. Bypass architecture reviews, DoD checklists, and multi-tier scaffolding. |
-| **PRD / Design Doc / Rough Idea** | **Requirements Scoping** | Auto-catchup domain $\rightarrow$ Ingest to `.agents/knowledge/` $\rightarrow$ Build In-Scope vs. Non-Goals matrix $\rightarrow$ Generate INVEST stories $\rightarrow$ **STOP & Request Developer Approval on Plan** $\rightarrow$ Execute once approved. |
-| **Specific User Story** | **Production Story Solver** | Execute 5-phase full-stack build enforcing the **10-Point Production Definition of Done (DoD)**. |
-| **System Architecture / Scale** | **Principal Architecture** | Back-of-envelope math, C4 models, DB schema with indexes (UUIDv7), RFC 7807 APIs, and ADR. |
-| **Code Review / Audit** | **Production Code Review** | 7-pillar audit: OWASP Top 10, concurrency/race conditions, N+1 queries, type safety, test coverage. |
-| **Bug Report / Crash / Trace** | **Root Cause Analysis (RCA)** | 5-Whys diagnosis, minimal hotfix, regression test, permanent architectural remediation. |
-| **Search / Investigate / "How to"** | **Deep Search & Execute** | Targeted codebase/web search $\rightarrow$ trade-off matrix $\rightarrow$ immediate production execution. |
-| **Test Suite / QA Request** | **Quality Engineering** | Implement 8-level testing pyramid (Unit, Property-based, Testcontainers integration, k6 load). |
+| **`qs:` / `quick:`** | **Gear 1: Fast Path** | Minimal, direct code in <2s. Zero DoD, zero scaffolding. |
+| **`mod:` / `fix:` / `ui:`** | **Gear 2: Tactical Surgical** | Modify target tier only. Strict types + regression test. Zero unrequested backend/DB scaffolding. |
+| **`story:` / `feat:` / `prd:`** | **Gear 3: Strategic Master** | Full 10-Point Production DoD end-to-end. |
+| **`review:` / `audit:`** | **Production Code Review** | 7-Pillar audit: OWASP Top 10, concurrency, N+1 queries, memory leaks, types. |
+| **`rca:` / `debug:`** | **Root Cause Analysis** | 5-Whys diagnosis, minimal hotfix, regression test. |
+| **`/compact`** | **Context Compaction** | Persist state & decisions into `.agents/STATE.md`; purge working scratchpad. |
 
 ---
 
-## 2. AUTOMATIC ENVIRONMENT & TECH STACK INFERENCE
-Before writing code, inspect the repository to infer stack idioms dynamically:
-- `package.json` $\rightarrow$ TypeScript/Node (ESM, strict mode, Zod, Vitest/Jest).
-- `Cargo.toml` $\rightarrow$ Rust (Tokio, Axum, `Result<T, E>` with `thiserror`, zero `.unwrap()`).
-- `go.mod` $\rightarrow$ Go (1.22+, `context.Context` cancellation propagation, table-driven tests).
-- `pom.xml` / `build.gradle` $\rightarrow$ Java 21 (Virtual Threads, records, Spring Boot 3, Testcontainers).
-- `pyproject.toml` $\rightarrow$ Python 3.11+ (`uv`, Pydantic v2, non-blocking `asyncio`, Ruff, Pytest).
-- `.agents/STATE.md` $\rightarrow$ Read existing architecture decisions, active milestones, and invariants.
+## 2. AUTOMATIC STACK INFERENCE
+Infer conventions dynamically from root configs:
+- `package.json` -> TS/Node (ESM, strict, Zod, Vitest).
+- `Cargo.toml` -> Rust (Tokio, Axum, Result<T,E>, zero `.unwrap()`).
+- `go.mod` -> Go (1.22+, context cancellation, table-driven tests).
+- `pom.xml` / `build.gradle` -> Java 21 (Virtual Threads, records, Spring Boot 3).
+- `pyproject.toml` -> Python 3.11+ (uv, Pydantic v2, Ruff, Pytest).
+- `.agents/STATE.md` -> Load active decisions, invariants, and backlog.
 
 ---
 
-## 3. MANDATORY 10-POINT PRODUCTION DEFINITION OF DONE (DoD)
-Every feature or user story implementation must verify all 10 pillars before completion:
-1. **Defensive Validation**: Ingress runtime schema verification (Zod/Pydantic) before domain logic.
-2. **Authorization & IDOR**: Session-derived tenant/user checks on every object read/write.
-3. **Atomic Data & Indexes**: Explicit ACID transactions on multi-table writes; composite B-Tree indexes.
-4. **Concurrency & Idempotency**: `Idempotency-Key` headers for mutations; optimistic/pessimistic locking.
-5. **RFC 7807 Errors**: Structured `{ type, title, status, detail, instance }` payloads (zero blank 500s).
-6. **Timeouts & Cancellation**: Explicit HTTP/RPC timeouts; `ctx.Done()` / `AbortController` propagation.
-7. **Frontend 4-State UI**: Loading skeleton (fixed aspect ratio), Empty state (with CTA), Error state (with retry), Populated state.
-8. **Accessibility & Core Web Vitals**: WCAG 2.1 AA/AAA keyboard navigation, ARIA labels, zero layout shifts (CLS < 0.1).
-9. **Deterministic Tests**: Boundary unit tests (null, empty, negative, max limits) + real DB integration tests.
-10. **Telemetry & State Sync**: Structured JSON logs with trace correlation; update `.agents/STATE.md`.
+## 3. MANDATORY 10-POINT PRODUCTION DoD (GEAR 3)
+1. **Validation**: Runtime schema ingress (Zod/Pydantic) before domain logic.
+2. **Auth & IDOR**: Session-derived tenant/user identity; zero client-ID trust.
+3. **Atomic DB**: Multi-table ACID transactions; composite B-Tree indexes; UUIDv7.
+4. **Concurrency**: Idempotency-Key headers; optimistic locking.
+5. **RFC 7807**: Problem Details payloads `{ type, title, status, detail, instance }`.
+6. **Timeouts**: Explicit HTTP/RPC timeouts; context/AbortController cancellation.
+7. **4-State UI**: Loading skeleton (fixed aspect ratio), Populated, Empty (with CTA), Error (with retry).
+8. **a11y & Vitals**: WCAG 2.1 AA keyboard navigation, ARIA labels, CLS < 0.1.
+9. **Tests**: Deterministic unit boundary tests + real DB integration tests.
+10. **State Sync**: Structured JSON logs (trace_id); sync `.agents/STATE.md`. Verified via `./scripts/verify-dod.ps1`.
 
 ---
 
-## 4. MODULAR REFERENCE PLAYBOOKS
-For deep domain guidance, consult the on-demand reference playbooks in `.agents/references/`:
-- Cross-Tier Cohesion: `.agents/references/interlinked-fullstack-workflow.md`
-- Production DoD: `.agents/references/production-definition-of-done.md`
-- Polyglot Standards: `.agents/references/polyglot-language-standards.md`
-- Testing Pyramid: `.agents/references/enterprise-testing-pyramid.md`
+## 4. MODULAR REFERENCES (ON-DEMAND)
+- DoD: `.agents/references/production-definition-of-done.md`
+- Workflows: `.agents/references/interlinked-fullstack-workflow.md`
+- Languages: `.agents/references/polyglot-language-standards.md`
+- Testing: `.agents/references/enterprise-testing-pyramid.md`
 - Microservices: `.agents/references/microservices-architecture.md`
-- Multi-Agent Systems: `.agents/references/multiagent-systems.md`
