@@ -8,3 +8,4 @@ templates/
 .agents/references/
 .agents/knowledge/architecture-decisions/.gitkeep
 .agents/knowledge/design-docs/.gitkeep
+

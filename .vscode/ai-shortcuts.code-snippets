@@ -1,0 +1,37 @@
+{
+  "Quick Snippet (Bypass Architecture & DoD)": {
+    "prefix": ["quick", "qs", "bypass", "snippet", "Quick Snippet"],
+    "body": [
+      "quick: bypass DoD and architectural overhead. $0"
+    ],
+    "description": "⚡ Skip enterprise DoD and architecture scaffolding for instant, minimal 1.5s code generation."
+  },
+  "Implement User Story (10-Point DoD)": {
+    "prefix": ["story", "us", "dod"],
+    "body": [
+      "Implement US-${1:01}: ${2:Action Title} adhering strictly to the 10-Point Production DoD. Target Stack: ${3:Next.js 15, TypeScript, PostgreSQL}. $0"
+    ],
+    "description": "🛡️ Execute end-to-end user story solver with the 10-Point Production Definition of Done."
+  },
+  "PRD Scoping & INVEST Stories": {
+    "prefix": ["prd", "scope", "invest"],
+    "body": [
+      "Deconstruct the following feature specification into Strictly In-Scope (P0) vs. Out-of-Scope (Non-Goals) and generate INVEST user stories with 5-scenario BDD:\n\n${0}"
+    ],
+    "description": "📋 Deconstruct PRD into scope boundaries and 5-scenario BDD user stories."
+  },
+  "Production Code Review (7 Pillars)": {
+    "prefix": ["review", "audit"],
+    "body": [
+      "Review this implementation against the 7 pillars: OWASP Top 10, concurrency/race conditions, N+1 queries, memory leaks, and strict type safety:\n\n$0"
+    ],
+    "description": "🔍 Audit code for security, concurrency, N+1 queries, and resilience."
+  },
+  "Root Cause Analysis (5-Whys)": {
+    "prefix": ["rca", "debug", "5whys"],
+    "body": [
+      "Perform a 5-Whys Root Cause Analysis on this crash/trace, provide a minimal hotfix, and add regression tests:\n\n$0"
+    ],
+    "description": "🐞 Diagnose error trace, write minimal hotfix, and generate regression tests."
+  }
+}
